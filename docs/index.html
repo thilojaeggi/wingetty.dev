@@ -31,7 +31,8 @@
 </head>
 
 <body class="min-h-screen h-full  flex flex-col bg-white dark:bg-neutral-950 font-poppins">
-  <nav x-data="{ menuVisible: window.innerWidth > 768 }" @click.away=" menuVisible = (window.innerWidth < 768 ) ? false : true"
+  <nav x-data="{ menuVisible: window.innerWidth > 768 }"
+    @click.away=" menuVisible = (window.innerWidth < 768 ) ? false : true"
     class="flex items-center justify-between flex-wrap sm:flex-row shadow-xl shadow-blue-500/20 sticky top-0 left-0 h-auto z-50 backdrop-blur-xl	">
     <div
       class="flex items-center justify-between flex-wrap  text-neutral-700 dark:text-neutral-100	p-4 max-w-screen-2xl w-full mx-auto">
@@ -41,23 +42,24 @@
       </div>
       <div class="block md:hidden">
         <button @click="menuVisible = !menuVisible"
-            class="flex items-center px-3 py-2  hover:text-blue-600 transition-colors duration-300">
-            <svg class="fill-current h-6 w-6 transition-transform duration-300" x-bind:class="menuVisible ? '-rotate-90' : 'rotate-0'" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+          class="flex items-center px-3 py-2  hover:text-blue-600 transition-colors duration-300">
+          <svg class="fill-current h-6 w-6 transition-transform duration-300"
+            x-bind:class="menuVisible ? '-rotate-90' : 'rotate-0'" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
         </button>
-    </div>
+      </div>
 
       <div
         class="w-full block flex-grow md:flex md:flex-row justify-between items-center md:w-auto text-lg font-semibold"
         x-collapse x-show="menuVisible">
-        <a href="/"
-          class="block mt-2 md:inline-block md:mt-0  hover:text-blue-600 mr-4 transition-colors duration-500">
+        <a href="/" class="block mt-2 md:inline-block md:mt-0  hover:text-blue-600 mr-4 transition-colors duration-500">
           Home
         </a>
 
-        <a href="{{ url_for('ui.packages') }}" 
+        <a href="{{ url_for('ui.packages') }}"
           class=" hidden mt-2  md:mt-0  hover:text-blue-600 mr-4 transition-colors duration-500">
           Pricing
         </a>
@@ -74,11 +76,12 @@
           Login
         </a>
         <a href="https://github.com/thilojaeggi/WinGetty"
-            class="ml-auto inline-flex items-center justify-center px-5 py-2 mr-3 text-base font-medium text-center text-white rounded-lg transition-colors duration-300 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-            GitHub Repository
-          </a>
-        
-        <button id="theme-toggle" class="theme-toggle mt-2 sm:mt-0" type="button" title="Toggle theme" aria-label="Toggle theme">
+          class="ml-auto inline-flex items-center justify-center px-5 py-2 mr-3 text-base font-medium text-center text-white rounded-lg transition-colors duration-300 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+          GitHub Repository
+        </a>
+
+        <button id="theme-toggle" class="theme-toggle mt-2 sm:mt-0" type="button" title="Toggle theme"
+          aria-label="Toggle theme">
           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="1.2em" height="1.2em" fill="currentColor"
             class="theme-toggle__expand" viewBox="0 0 32 32">
             <clipPath id="theme-toggle__expand__cutout">
@@ -106,7 +109,7 @@
             <div class="text-2xl md:text-3xl xl:text-4xl font-medium flex flex-col mt-3">
               <h3>Private WinGet Repositories</h3>
               <h3>made <span
-                  class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500 font-bold pr-1">easy</span>
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500 font-semibold pr-1">easy</span>
               </h3>
             </div>
           </div>
@@ -118,7 +121,7 @@
           </p>-->
           <a href="https://github.com/thilojaeggi/WinGetty"
             class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg transition-colors duration-300 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-            Try out the beta on GitHub
+            Try it out
             <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
@@ -137,11 +140,84 @@
     </section>
 
     <section class="bg-gray-100 dark:bg-neutral-900 ">
+      <div
+        class="py-8 px-4 max-w-screen-2xl sm:py-16 lg:px-6 flex flex-col lg:flex-row justify-between ">
+        
+        <div class="space-y-8 md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-end  md:gap-12 md:space-y-0">
+          <div class="max-w-md lg:row-span-2 my-auto">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Features you'll love
+            </h2>
+            <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+              Using winget with WinGetty is the easiest way to distribute your own packages. WinGetty supports all the features of winget and more.
+            </p>
+          </div>
+
+          <div class="max-w-lg mx-auto">
+            <div
+              class="flex dark:text-white  justify-center md:justify-start items-center text-center mb-1 h-20 rounded-full bg-primary-100 md:h-10 md:w-10 dark:bg-primary-900">
+              <svg class="h-full w-full" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M10 3.75a2 2 0 10-4 0 2 2 0 004 0zM17.25 4.5a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM5 3.75a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM4.25 17a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM17.25 17a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM9 10a.75.75 0 01-.75.75h-5.5a.75.75 0 010-1.5h5.5A.75.75 0 019 10zM17.25 10.75a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM14 10a2 2 0 10-4 0 2 2 0 004 0zM10 16.25a2 2 0 10-4 0 2 2 0 004 0z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold dark:text-white text-center md:text-start">Installer Switches</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-center md:text-start">
+              WinGetty supports installer switches. You can add switches to your installers like "silent" and "install
+              directory" and WinGetty will pass them
+              to the installer when used with winget.
+            </p>
+          </div>
+          <div class="max-w-lg mx-auto">
+            <div
+            class="flex dark:text-white  justify-center md:justify-start items-center text-center mb-1 h-20 rounded-full bg-primary-100 md:h-10 md:w-10 dark:bg-primary-900">
+            <svg class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold dark:text-white text-center md:text-start">Nested Installers</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-center md:text-start">
+              WinGetty supports nested installers. You can upload your installer within a zip and specify the installer
+              path.
+              Useful when the installer requires dependencies within the same archive.
+            </p>
+          </div>
+          <div class="max-w-lg lg:col-start-3 mx-auto">
+            <div
+            class="flex dark:text-white  justify-center md:justify-start items-center text-center mb-1 h-20 rounded-full bg-primary-100 md:h-10 md:w-10 dark:bg-primary-900">
+            <svg class="h-full w-full" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold dark:text-white text-center md:text-start">Multi User
+
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 text-center md:text-start">
+              WinGetty supports multiple users and roles. You can create as many users as you want and assign them to
+              different roles or use the default roles.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+    <section class="bg-white dark:bg-gray-800">
+
       <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
         <div class=" mb-8 lg:mb-16 w-full max-w-screen-md mx-auto">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Made for
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-black">everyone</span>
+              class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-extrabold">everyone</span>
           </h2>
           <p class="text-gray-500 sm:text-xl dark:text-gray-400 text-center">Whether you are a developer, a system
             administrator or just getting started with WinGet, WinGetty is the perfect solution for you.</p>
@@ -203,11 +279,11 @@
       </div>
     </section>
 
-    <section class="bg-white dark:bg-gray-800">
+    <section class="bg-gray-100 dark:bg-neutral-900 ">
       <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
         <div class=" mb-8 lg:mb-16 w-full max-w-screen-md mx-auto">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Easy as
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-black">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-extrabold ">
               1. 2. 3.
             </span>
           </h2>
@@ -219,12 +295,15 @@
           <div class="flex flex-col items-center">
 
 
-            <svg class="w-14 h-14 text-blue-600 lg:w-16 lg:h-16 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"></path>
+            <svg class="w-14 h-14 text-blue-600 lg:w-16 lg:h-16 " fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z">
+              </path>
             </svg>
 
             <h3 class="my-2 text-xl font-bold dark:text-white"><span
-                class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-black">
+                class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-bold">
                 1.
               </span>Install & Host</h3>
             <p class="text-gray-500 dark:text-gray-400 text-center">
@@ -232,35 +311,42 @@
             </p>
           </div>
           <div class="flex flex-col items-center">
-            <svg class="w-14 h-14 text-blue-600 lg:w-16 lg:h-16 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"></path>
+            <svg class="w-14 h-14 text-blue-600 lg:w-16 lg:h-16 " fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244">
+              </path>
             </svg>
             <h3 class="my-2 text-xl font-bold dark:text-white"><span
-                class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-black">
+                class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-bold">
                 2.
               </span>Connect to Repository</h3>
             <p class="text-gray-500 dark:text-gray-400 text-center">
               Connect your Windows devices to your repository by running a single command.
-              This is as easy as typing <span class="bg-gray-100 dark:bg-gray-900 rounded-sm px-1 font-mono">winget
+              This is as easy as typing <span class="bg-gray-200 dark:bg-neutral-800 rounded-sm px-1 font-mono">winget
                 source add</span>
             </p>
           </div>
           <div class="flex flex-col items-center">
-            
-            <svg class="w-14 h-14 text-blue-600 lg:w-16 lg:h-16 " viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-              <path fill-rule="evenodd" d="M5.478 5.559A1.5 1.5 0 016.912 4.5H9A.75.75 0 009 3H6.912a3 3 0 00-2.868 2.118l-2.411 7.838a3 3 0 00-.133.882V18a3 3 0 003 3h15a3 3 0 003-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0017.088 3H15a.75.75 0 000 1.5h2.088a1.5 1.5 0 011.434 1.059l2.213 7.191H17.89a3 3 0 00-2.684 1.658l-.256.513a1.5 1.5 0 01-1.342.829h-3.218a1.5 1.5 0 01-1.342-.83l-.256-.512a3 3 0 00-2.684-1.658H3.265l2.213-7.191z" clip-rule="evenodd" />
-              <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v6.44l1.72-1.72a.75.75 0 111.06 1.06l-3 3a.75.75 0 01-1.06 0l-3-3a.75.75 0 011.06-1.06l1.72 1.72V3a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+
+            <svg class="w-14 h-14 text-blue-600 lg:w-16 lg:h-16 " viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.478 5.559A1.5 1.5 0 016.912 4.5H9A.75.75 0 009 3H6.912a3 3 0 00-2.868 2.118l-2.411 7.838a3 3 0 00-.133.882V18a3 3 0 003 3h15a3 3 0 003-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0017.088 3H15a.75.75 0 000 1.5h2.088a1.5 1.5 0 011.434 1.059l2.213 7.191H17.89a3 3 0 00-2.684 1.658l-.256.513a1.5 1.5 0 01-1.342.829h-3.218a1.5 1.5 0 01-1.342-.83l-.256-.512a3 3 0 00-2.684-1.658H3.265l2.213-7.191z"
+                clip-rule="evenodd" />
+              <path fill-rule="evenodd"
+                d="M12 2.25a.75.75 0 01.75.75v6.44l1.72-1.72a.75.75 0 111.06 1.06l-3 3a.75.75 0 01-1.06 0l-3-3a.75.75 0 011.06-1.06l1.72 1.72V3a.75.75 0 01.75-.75z"
+                clip-rule="evenodd" />
             </svg>
-            
-            
+
+
             <h3 class="my-2 text-xl font-bold dark:text-white"><span
-                class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-black">
+                class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 font-bold">
                 3.
               </span>Deploy</h3>
-              
+
             <p class="text-gray-500 dark:text-gray-400 text-center">
               You are now ready to deploy your packages to your devices. Just run <span
-                class="bg-gray-100 dark:bg-gray-900 rounded-sm px-1 font-mono">winget install &lt;package&gt;</span>
+                class="bg-gray-200 dark:bg-neutral-800 rounded-sm px-1 font-mono">winget install &lt;package&gt;</span>
               and WinGet will install your package.
             </p>
           </div>
