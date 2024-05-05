@@ -16,3 +16,7 @@
 html {
     scroll-behavior: smooth;
   }
+
+.fill-primary {
+    @apply text-green-500;
+}
